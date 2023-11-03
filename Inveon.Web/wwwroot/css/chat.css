@@ -1,0 +1,10 @@
+﻿.my-modal {
+    display: flex; /* Initially hide the container */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px; /* Adjust the width as needed */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1002; /* Ensure it's above other elements */
+}

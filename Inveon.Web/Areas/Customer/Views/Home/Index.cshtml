@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ProductDto>
+<form>
+
+    <div class="container row">
+
+        @foreach (var product in Model)
+        {
+            <div class="col-4 ">
+                <div class="p-0 my-3 border">
+                    <div class="card">
+
+                        <img src="~/Uploads/@product.ImageUrl" class="card-img-top" alt="@product.ImageUrl">
+                        <div class="card-body">
+                            <h3 class="card-title text-success">@product.Name</h3>
+                            <span class="badge badge-light mb-2 ">@product.CategoryName</span>
+                            <p class="card-text">@Html.Raw(product.Description)</p>
+                            <div class="row">
+                                <div class="col pt-1">
+                                    <span style="font-size:23px;">@string.Format("{0:c}", product.Price)</span>
+                                </div>
+                                <div class="col">
+                                    <a asp-action="Details" asp-route-productId="@product.ProductId"
+                                       class="btn btn-success form-control">Details</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</form>
+<br />
+<br />
+
+<div id="chatModal" class="my-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="max-height: 300px; overflow-y: auto;">
+            <ul class="list-group" id="messageList">
+            </ul>
+        </div>
+        <div class="modal-footer">
+              <label for="message-text" class="col-form-label">Message:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            <button type="button" id="sendButton" class="btn btn-primary" onclick="sendMessage()">Send message</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,25 @@
+﻿<ul class="navbar-nav">
+	@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+	//@if (User.Identity.IsAuthenticated)
+	{
+
+		<li class="nav-item">
+			<a class="nav-link" href="#">Merhaba @User.Identity.Name</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="ProductIndex">Ürünler </a>
+		</li>
+		<li>
+			<button type="button" id="openChatButton" class="btn btn-outline-primary btn-upper" data-toggle="modal" data-target="#kt_chat_modal">Messages</button>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" asp-area="Admin" asp-controller="Yonetici" asp-action="AdminLogout">Logout </a>
+		</li>
+	}
+	else
+	{
+		<li class="nav-item">
+			<a class="nav-link" asp-action="Login" asp-controller="Home">Login</a>
+		</li>
+	}
+</ul>

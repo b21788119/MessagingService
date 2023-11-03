@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Z5NZNsORE9UCs432cBU8QE+7Zgx8+GFdiazVUtk5ro0=",
+  "Source": "Inveon.Services.MessageAPI",
+  "BasePath": "_content/Inveon.Services.MessageAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
